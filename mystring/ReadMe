@@ -1,0 +1,219 @@
+该文件夹有毒:
+可能原因，但不十分确定，有"String.h"和"String.h"  与<string.h> 加载时名字冲突
+已经把String.h重命名
+
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$vim main.cc 
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$g++ main.cc 
+In file included from main.cc:8:0:
+/usr/include/c++/5/cstring:75:11: error: ‘::memchr’ has not been declared
+using ::memchr;
+^
+/usr/include/c++/5/cstring:76:11: error: ‘::memcmp’ has not been declared
+using ::memcmp;
+^
+/usr/include/c++/5/cstring:77:11: error: ‘::memcpy’ has not been declared
+using ::memcpy;
+^
+/usr/include/c++/5/cstring:78:11: error: ‘::memmove’ has not been declared
+using ::memmove;
+^
+/usr/include/c++/5/cstring:79:11: error: ‘::memset’ has not been declared
+using ::memset;
+^
+/usr/include/c++/5/cstring:80:11: error: ‘::strcat’ has not been declared
+using ::strcat;
+^
+/usr/include/c++/5/cstring:81:11: error: ‘::strcmp’ has not been declared
+using ::strcmp;
+^
+/usr/include/c++/5/cstring:82:11: error: ‘::strcoll’ has not been declared
+using ::strcoll;
+^
+/usr/include/c++/5/cstring:83:11: error: ‘::strcpy’ has not been declared
+using ::strcpy;
+^
+/usr/include/c++/5/cstring:84:11: error: ‘::strcspn’ has not been declared
+using ::strcspn;
+^
+/usr/include/c++/5/cstring:85:11: error: ‘::strerror’ has not been declared
+using ::strerror;
+^
+/usr/include/c++/5/cstring:86:11: error: ‘::strlen’ has not been declared
+using ::strlen;
+^
+/usr/include/c++/5/cstring:87:11: error: ‘::strncat’ has not been declared
+using ::strncat;
+^
+/usr/include/c++/5/cstring:88:11: error: ‘::strncmp’ has not been declared
+using ::strncmp;
+^
+/usr/include/c++/5/cstring:89:11: error: ‘::strncpy’ has not been declared
+using ::strncpy;
+^
+/usr/include/c++/5/cstring:90:11: error: ‘::strspn’ has not been declared
+using ::strspn;
+^
+/usr/include/c++/5/cstring:91:11: error: ‘::strtok’ has not been declared
+using ::strtok;
+^
+/usr/include/c++/5/cstring:92:11: error: ‘::strxfrm’ has not been declared
+using ::strxfrm;
+^
+/usr/include/c++/5/cstring:93:11: error: ‘::strchr’ has not been declared
+using ::strchr;
+^
+/usr/include/c++/5/cstring:94:11: error: ‘::strpbrk’ has not been declared
+using ::strpbrk;
+^
+/usr/include/c++/5/cstring:95:11: error: ‘::strrchr’ has not been declared
+using ::strrchr;
+^
+/usr/include/c++/5/cstring:96:11: error: ‘::strstr’ has not been declared
+using ::strstr;
+^
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$ll
+total 562K
+drwxrwxr-x 1 501 dialout  288 Apr 22 13:23 ./
+drwxr-xr-x 1 501 dialout  416 Apr 22 13:21 ../
+-rwxr-xr-x 1 501 dialout 9.0K Apr 22 13:23 a.out*
+-rw------- 1 501 dialout 548K Apr 22 10:47 core
+-rw-r--r-- 1 501 dialout  320 Apr 22 13:23 main.cc
+-rw-r--r-- 1 501 dialout   87 Apr 22 10:47 Makefile
+-rw-r--r-- 1 501 dialout  897 Apr 22 13:13 string.cc
+-rw-r--r-- 1 501 dialout  430 Apr 22 13:05 string.h
+-rw-r--r-- 1 501 dialout  554 Apr 22 13:07 testString.cc
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$mv String.h
+mv: missing destination file operand after 'String.h'
+Try 'mv --help' for more information.
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$mv string.h String.h
+mv: overwrite 'String.h'? ^C
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$ll
+total 562K
+drwxrwxr-x 1 501 dialout  288 Apr 22 13:23 ./
+drwxr-xr-x 1 501 dialout  416 Apr 22 13:21 ../
+-rwxr-xr-x 1 501 dialout 9.0K Apr 22 13:23 a.out*
+-rw------- 1 501 dialout 548K Apr 22 10:47 core
+-rw-r--r-- 1 501 dialout  320 Apr 22 13:23 main.cc
+-rw-r--r-- 1 501 dialout   87 Apr 22 10:47 Makefile
+-rw-r--r-- 1 501 dialout  897 Apr 22 13:13 string.cc
+-rw-r--r-- 1 501 dialout  430 Apr 22 13:05 string.h
+-rw-r--r-- 1 501 dialout  554 Apr 22 13:07 testString.cc
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$mv string.h String.h
+mv: overwrite 'String.h'? y
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$ll
+total 562K
+drwxrwxr-x 1 501 dialout  288 Apr 22 13:27 ./
+drwxr-xr-x 1 501 dialout  416 Apr 22 13:21 ../
+-rwxr-xr-x 1 501 dialout 9.0K Apr 22 13:23 a.out*
+-rw------- 1 501 dialout 548K Apr 22 10:47 core
+-rw-r--r-- 1 501 dialout  320 Apr 22 13:23 main.cc
+-rw-r--r-- 1 501 dialout   87 Apr 22 10:47 Makefile
+-rw-r--r-- 1 501 dialout  897 Apr 22 13:13 string.cc
+-rw-r--r-- 1 501 dialout  430 Apr 22 13:05 String.h
+-rw-r--r-- 1 501 dialout  554 Apr 22 13:07 testString.cc
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$vim String.h 
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$ll -a
+total 562K
+drwxrwxr-x 1 501 dialout  288 Apr 22 13:27 ./
+drwxr-xr-x 1 501 dialout  416 Apr 22 13:21 ../
+-rwxr-xr-x 1 501 dialout 9.0K Apr 22 13:23 a.out*
+-rw------- 1 501 dialout 548K Apr 22 10:47 core
+-rw-r--r-- 1 501 dialout  320 Apr 22 13:23 main.cc
+-rw-r--r-- 1 501 dialout   87 Apr 22 10:47 Makefile
+-rw-r--r-- 1 501 dialout  897 Apr 22 13:13 string.cc
+-rw-r--r-- 1 501 dialout  430 Apr 22 13:05 String.h
+-rw-r--r-- 1 501 dialout  554 Apr 22 13:07 testString.cc
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$mv string.c String.cc
+mv: cannot stat 'string.c': No such file or directory
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$mv string.c String.cc
+mv: cannot stat 'string.c': No such file or directory
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$mv string.cc String.cc
+mv: overwrite 'String.cc'? y
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$ll
+total 562K
+drwxrwxr-x 1 501 dialout  288 Apr 22 13:28 ./
+drwxr-xr-x 1 501 dialout  416 Apr 22 13:21 ../
+-rwxr-xr-x 1 501 dialout 9.0K Apr 22 13:23 a.out*
+-rw------- 1 501 dialout 548K Apr 22 10:47 core
+-rw-r--r-- 1 501 dialout  320 Apr 22 13:23 main.cc
+-rw-r--r-- 1 501 dialout   87 Apr 22 10:47 Makefile
+-rw-r--r-- 1 501 dialout  897 Apr 22 13:13 String.cc
+-rw-r--r-- 1 501 dialout  430 Apr 22 13:05 String.h
+-rw-r--r-- 1 501 dialout  554 Apr 22 13:07 testString.cc
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$vim String.cc 
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$vim main.cc 
+[cheng@ubuntu:/mnt/hgfs/ChengWang/C++/Projects/mySTL/mystring]$g++ main.cc 
+In file included from main.cc:8:0:
+/usr/include/c++/5/cstring:75:11: error: ‘::memchr’ has not been declared
+using ::memchr;
+^
+/usr/include/c++/5/cstring:76:11: error: ‘::memcmp’ has not been declared
+using ::memcmp;
+^
+/usr/include/c++/5/cstring:77:11: error: ‘::memcpy’ has not been declared
+using ::memcpy;
+^
+/usr/include/c++/5/cstring:78:11: error: ‘::memmove’ has not been declared
+using ::memmove;
+^
+/usr/include/c++/5/cstring:79:11: error: ‘::memset’ has not been declared
+using ::memset;
+^
+/usr/include/c++/5/cstring:80:11: error: ‘::strcat’ has not been declared
+using ::strcat;
+^
+/usr/include/c++/5/cstring:81:11: error: ‘::strcmp’ has not been declared
+using ::strcmp;
+^
+/usr/include/c++/5/cstring:82:11: error: ‘::strcoll’ has not been declared
+using ::strcoll;
+^
+/usr/include/c++/5/cstring:83:11: error: ‘::strcpy’ has not been declared
+using ::strcpy;
+^
+/usr/include/c++/5/cstring:84:11: error: ‘::strcspn’ has not been declared
+using ::strcspn;
+^
+/usr/include/c++/5/cstring:85:11: error: ‘::strerror’ has not been declared
+using ::strerror;
+^
+/usr/include/c++/5/cstring:86:11: error: ‘::strlen’ has not been declared
+using ::strlen;
+^
+/usr/include/c++/5/cstring:87:11: error: ‘::strncat’ has not been declared
+using ::strncat;
+^
+/usr/include/c++/5/cstring:88:11: error: ‘::strncmp’ has not been declared
+using ::strncmp;
+^
+/usr/include/c++/5/cstring:89:11: error: ‘::strncpy’ has not been declared
+using ::strncpy;
+^
+/usr/include/c++/5/cstring:90:11: error: ‘::strspn’ has not been declared
+using ::strspn;
+^
+/usr/include/c++/5/cstring:91:11: error: ‘::strtok’ has not been declared
+using ::strtok;
+^
+/usr/include/c++/5/cstring:92:11: error: ‘::strxfrm’ has not been declared
+using ::strxfrm;
+^
+/usr/include/c++/5/cstring:93:11: error: ‘::strchr’ has not been declared
+using ::strchr;
+^
+/usr/include/c++/5/cstring:94:11: error: ‘::strpbrk’ has not been declared
+using ::strpbrk;
+^
+/usr/include/c++/5/cstring:95:11: error: ‘::strrchr’ has not been declared
+using ::strrchr;
+^
+/usr/include/c++/5/cstring:96:11: error: ‘::strstr’ has not been declared
+using ::strstr;
+^
+[cheng@ubuntu:/mnt/

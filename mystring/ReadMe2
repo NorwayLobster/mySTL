@@ -1,0 +1,2 @@
+g++ main.cc String.cc -std=c++11 -fno-elide-constructors
+in order to test rvalue reference
